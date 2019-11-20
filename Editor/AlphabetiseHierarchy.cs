@@ -4,17 +4,17 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Linq;
 
-public class AlphabetiseHierachy : EditorWindow
+public class AlphabetiseHierarchy : EditorWindow
 {
-    //[Shortcut("J-Scripts/AlphabetiseHierachy")]
-    [MenuItem("J-Scripts/AlphabetiseHierachy")]
+    //[Shortcut("J-Scripts/AlphabetiseHierarchy")]
+    [MenuItem("J-Scripts/Alphabetise/Hierarchy")]
     public static void Alphabetise()
     {
         if (EditorUtility.DisplayDialog("Alphabetise?","Are you sure you wish to Alphabetise " + SceneManager.GetActiveScene().name + "?", "Sure am!", "Nope"))
         {
-            //Create a list to store the objects in heirachy
+            //Create a list to store the objects in hierarchy
             List<GameObject> rootObjects = new List<GameObject>();
-            //Gets all Root Objects in the heirachy and adds them to the rootObjects List
+            //Gets all Root Objects in the hierarchy and adds them to the rootObjects List
             SceneManager.GetActiveScene().GetRootGameObjects(rootObjects);
 
             //Use linq to order the list A-Z
@@ -25,7 +25,8 @@ public class AlphabetiseHierachy : EditorWindow
         }
     }
 
-    [MenuItem("J-Scripts/AlphabetiseChildren")]
+    //[Shortcut("J-Scripts/AlphabetiseChildren")]
+    [MenuItem("J-Scripts/Alphabetise/Children")]
     public static void AlphabetiseChildren()
     {
         
@@ -37,7 +38,7 @@ public class AlphabetiseHierachy : EditorWindow
 
         if (EditorUtility.DisplayDialog("Alphabetise?","Are you sure you wish to Alphabetise " + parent.name + "?", "Sure am!", "Nope"))
         {
-            //Create a list to store the objects in heirachy
+            //Create a list to store the objects in hierarchy
             List<GameObject> childObjects = new List<GameObject>();
 
             //Find all the children of the selected gameoject and them to the child list

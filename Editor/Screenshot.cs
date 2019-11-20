@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Screenshot : EditorWindow
 {
+	//[Shortcut("J-Scripts/Screenshot")]
     [MenuItem("J-Scripts/Screenshot")]
     public static void Screengrab()
     {
